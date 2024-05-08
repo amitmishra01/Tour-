@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href={% static 'css/signcs.css' %}>
+
+    <style>
+            
+        .login-link{
+            margin: 20px 0 10px;
+            text-align: center;
+        }
+        .login-link a{
+            font-size: 1em;
+            color: rgb(0, 238, 255);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .login-link a:hover{
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+<body style="background-image: url('{% static 'images/l1.jpg' %}')">
+    <div class="box" >
+        <span class="boxline"></span>
+        <form action="" method="post">
+        {% csrf_token %}
+            <h2>Tourist</h2>
+            
+            <div class="inputBox">
+                <input type="text" name ='username' required >
+                <span>Username</span>
+                <i></i>
+            </div> 
+            <div class="inputBox">
+                <input type="email" name='email' required>
+                <span>Email Address</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="password" name='password' required>
+                <span>Enter Password</span>
+                <i></i>
+            </div>
+            <div class="inputBox">
+                <input type="password" name='confirm_password' required>
+                <span>Confirm Password</span>
+                <i></i>
+            </div>
+
+
+
+
+
+            <div class="rBtn">
+                <label class="lbl">Gender :</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="male">
+                    <label class="form-check-label" for="male">Male</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="female" >
+                    <label class="form-check-label" for="female">
+                      Female
+                    </label>
+                  </div>
+            </div> 
+            <input type="submit" value="Signup"> 
+            {% comment %} <button type="Login" class="btn btn-primary">Login</button><br> {% endcomment %}
+
+            <div class="login-link">
+                    <a href="{% url 'login' %}">LOGIN</a>
+            </div>
+
+
+
+            
+            
+                    {% comment %} <a href="{% url 'login' %}"> <input type="" value="login"></a> {% endcomment %}
+             
+        </form>
+
+        {% if messages %}<br>
+            {% for message in messages %}<br>
+            <small {% if messages.tags %} class ="{{message.tags}}"{% endif %}>{{message}}<br>
+    
+            </small>
+            {% endfor %}
+        {% endif %}<br>
+
+        {% comment %} <a href="{% url 'login' %}">
+            <button type="Login" class="btn btn-primary">Login</button><br>
+        </a> {% endcomment %}
+    </div>
+</body>
+</html>

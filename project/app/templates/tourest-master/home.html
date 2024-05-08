@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourist - Explore the World</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+
+
+  <link rel="stylesheet" href={% static 'css/style.css' %}>
+  
+
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Comforter+Brush&family=Heebo:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+   
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#">
+        <h1 class="logo">Tourist</h1>
+      </a>
+
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+        <ion-icon name="menu-outline" class="open"></ion-icon>
+        <ion-icon name="close-outline" class="close"></ion-icon>
+      </button>
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="{% url 'home' %}" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="{% url 'about' %}" class="navbar-link">About Us</a>
+          </li>
+
+          <li>
+            <a href="{% url 'tour' %}" class="navbar-link">Tours</a>
+          </li>
+
+          <li>
+            <a href="{% url 'Destinations' %}" class="navbar-link">Destinations</a>
+          </li>
+
+          <li>
+            <a href="{% url 'blog' %}" class="navbar-link">Blog</a>
+          </li>
+
+          <li>
+            <a href="{% url 'contact' %}" class="navbar-link">Contact Us</a>
+          </li>
+
+          <li>
+            <a href="{% url 'logout' %}" class="navbar-link">Logout</a>
+          </li>
+
+        </ul>
+
+        <a href="#" class="btn btn-secondary">Booking Now</a>
+
+      </nav>
+
+    </div>
+  </header>
+  
+
+
+
+
+  <main>
+    <article>
+  {% comment %} {% block main %} {% endcomment %}
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero"
+        style="background-image: url('{% static 'images/hero-bg-bottom.png' %}') url('{% static 'images/hero-bg-top.png' %}')">
+        <div class="container">
+
+          <img src="{% static 'images/shape-1.png' %}" width="61" height="61" alt="Vector Shape" class="shape shape-1">
+
+          <img src=" {% static 'images/shape-2.png' %}  " width="56" height="74" alt="Vector Shape" class="shape shape-2">
+
+          <img src="{% static 'images/shape-3.png' %}" width="57" height="72" alt="Vector Shape" class="shape shape-3">
+
+          <div class="hero-content">
+
+            <p class="section-subtitle">Explore Your Travel</p>
+
+            <h2 class="hero-title">Amit's Travel Agency</h2>
+
+            <p class="hero-text">
+              I travel not to go anywhere, but to go. I travel for travel's sake the great affair is to move.
+            </p>
+
+            <div class="btn-group">
+              <a href="{% url 'contact' %}" class="btn btn-primary">Contact Us</a>
+
+              <a href="#" class="btn btn-outline">Learn More</a>
+            </div>
+
+          </div>
+
+          <figure class="hero-banner">
+            <img src="{% static 'images/404.jpg' %}" width="686" height="812" loading="lazy" alt="hero banner"
+              class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #DESTINATION
+      -->
+
+      <section class="section destination">
+        <div class="container">
+
+          <p class="section-subtitle">Destinations</p>
+
+          <h2 class="h2 section-title">Choose Your Place</h2>
+
+          <ul class="destination-list">
+
+            <li class="w-50">
+              <a href="https://visitmaldives.com/en/experience/swimming-with-whale-sharks-at-ari-atoll-highlights-from-the-visit-maldives-storytellers-conference-2023-sideline-adventures" class="destination-card">
+
+                <figure class="card-banner">
+                  <img src="{% static 'images/destination-1.jpg' %}" width="1140" height="1100" loading="lazy"
+                    alt="Malé, Maldives" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">Malé</p>
+
+                  <h3 class="h3 card-title">Maldives</h3>
+                </div>
+
+              </a>
+            </li>
+
+            <li class="w-50">
+              <a href="https://www.tripadvisor.com/Tourism-g293916-Bangkok-Vacations.html" class="destination-card">
+
+                <figure class="card-banner">
+                  <img src="{% static 'images/destination-2.jpg' %}" width="1140" height="1100" loading="lazy"
+                    alt="Bangkok, Thailand" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">Bangkok</p>
+
+                  <h3 class="h3 card-title">Thailand</h3>
+                </div>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.visitacity.com/en/kuala-lumpur/activities/all-activities?activitiesSearchByName=Malacca&campaginid=602218582&adgroupid=1280931483772019&targetid=kwd-80058470391184&utm_source=bing&utm_medium=cpc&utm_campaign=Kuala%20Lumpur%20ActivitiesM%20G-REST-In-SEA&utm_term=malacca%20tour%20kuala%20lumpur&utm_content=Historical%20Malacca" class="destination-card">
+
+                <figure class="card-banner">
+                  <img src="{% static 'images/destination-3.jpg' %}" width="1110" height="480" loading="lazy"
+                    alt="Kuala Lumpur, Malaysia" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">Kuala Lumpur</p>
+
+                  <h3 class="h3 card-title">Malaysia</h3>
+                </div>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.getyourguide.com/-l169147/?cmp=bing&cmp=bing&campaign_id=710123566&adgroup_id=1246846834538260&target_id=kwd-77928299607820:aud-806416223&match_type=e&ad_id=77928091474961&msclkid=bf6a430a5b6b1cb337b327dfa7789e85&loc_physical_ms=149973&feed_item_id=&keyword=nepal&partner_id=CD951&utm_medium=paid_search&utm_source=bing&utm_campaign=dc%3D191%3Anp%7Clc%3D169147%3Anepal%7Cct%3Dcore%7Cln%3D29%3Aen%7Ctc%3Dall&utm_term=nepal&gclsrc=3p.ds&" class="destination-card">
+
+                <figure class="card-banner">
+                  <img src="{% static 'images/destination-4.jpg' %}" width="1110" height="480" loading="lazy"
+                    alt="Kathmandu, Nepal" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">Kathmandu</p>
+
+                  <h3 class="h3 card-title">Nepal</h3>
+                </div>
+
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.getyourguide.com/jakarta-l278/day-trips-tc360/?cmp=bing&campaign_id=710118219&adgroup_id=1251244881437496&target_id=dat-2330002578474209:aud-806416215&match_type=b&ad_id=78202969682714&msclkid=f5a00f456b3718516fdc6b90976efd2c&loc_physical_ms=149973&feed_item_id=&keyword=-l278%2F&partner_id=CD951&utm_medium=paid_search&utm_source=bing&utm_campaign=dc%3D62%3Aid%7Clc%3D278%3Ajakarta%7Cct%3Dcore%7Cln%3D29%3Aen%7Ctc%3Dall&utm_term=-l278%2F&gclsrc=3p.ds&" class="destination-card">
+
+                <figure class="card-banner">
+                  <img src="{% static 'images/destination-5.jpg' %}" width="1110" height="480" loading="lazy"
+                    alt="Jakarta, Indonesia" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <p class="card-subtitle">Jakarta</p>
+
+                  <h3 class="h3 card-title">Indonesia</h3>
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #POPULAR
+      -->
+
+      <section class="section popular">
+        <div class="container">
+
+          <p class="section-subtitle">Featured Tours</p>
+
+          <h2 class="h2 section-title">Most Popular Tours</h2>
+
+          <ul class="popular-list">
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-banner">
+                  <a href="https://www.getyourguide.com/-l4012/-tc1144/?cmp=bing&campaign_id=710108714&adgroup_id=1253443904774202&target_id=dat-2330140017438334:aud-806259112&match_type=b&ad_id=78340408426126&msclkid=9714b8c3237d1e1307f2dc16dfd79fde&loc_physical_ms=149973&feed_item_id=&keyword=location_id%3D4012&partner_id=CD951&utm_medium=paid_search&utm_source=bing&utm_campaign=dc%3D63%3Amy%7Clc%3D4012%3Akuala%20lumpur%20tower%7Cct%3Dcore%7Cln%3D29%3Aen%7Ctc%3Dall&utm_term=location_id%3D4012&gclsrc=3p.ds&">
+                    <img src="{% static 'images/popular-1.jpg' %}" width="740" height="518" loading="lazy"
+                      alt="Kuala Lumpur, Malaysia" class="img-cover">
+                  </a>
+
+                  <span class="card-badge">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="P12D">12 Days</time>
+                  </span>
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-wrapper">
+                    <div class="card-price">From $50.00</div>
+
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+
+                      <data value="2">(2)</data>
+                    </div>
+                  </div>
+
+                  <h3 class="card-title">
+                    <a href="https://kuala-lumpur-tower.malaysia-tickets.com/?msclkid=cb8eaadb492615a452a0ce0eb5cdbe3c&utm_source=bing&utm_medium=cpc&utm_campaign=Kuala%20Lumpur%20-%20KL%20Tower%20-%20English%20-%20Rest%20of%20World%20-%20Search%20-%20All%20-%20All%20-%20cid2054&utm_term=kl%20tower%20tickets&utm_content=Tickets%20-%20Broad%20-%20English%20-%20All">A good traveler has no fixed plans and is not intent on arriving.</a>
+                  </h3>
+
+                  <address class="card-location">Kuala Lumpur, Malaysia</address>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-banner">
+                  <a href="https://kuala-lumpur-tower.malaysia-tickets.com/?msclkid=cb8eaadb492615a452a0ce0eb5cdbe3c&utm_source=bing&utm_medium=cpc&utm_campaign=Kuala%20Lumpur%20-%20KL%20Tower%20-%20English%20-%20Rest%20of%20World%20-%20Search%20-%20All%20-%20All%20-%20cid2054&utm_term=kl%20tower%20tickets&utm_content=Tickets%20-%20Broad%20-%20English%20-%20All">
+                    <img src="{% static 'images/popular-2.jpg' %}" width="740" height="518" loading="lazy"
+                      alt="Kuala Lumpur, Malaysia" class="img-cover">
+                  </a>
+
+                  <span class="card-badge">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="P12D">12 Days</time>
+                  </span>
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-wrapper">
+                    <div class="card-price">From $50.00</div>
+
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+
+                      <data value="2">(2)</data>
+                    </div>
+                  </div>
+
+                  <h3 class="card-title">
+                    <a href="https://kuala-lumpur-tower.malaysia-tickets.com/?msclkid=cb8eaadb492615a452a0ce0eb5cdbe3c&utm_source=bing&utm_medium=cpc&utm_campaign=Kuala%20Lumpur%20-%20KL%20Tower%20-%20English%20-%20Rest%20of%20World%20-%20Search%20-%20All%20-%20All%20-%20cid2054&utm_term=kl%20tower%20tickets&utm_content=Tickets%20-%20Broad%20-%20English%20-%20All">A good traveler has no fixed plans and is not intent on arriving.</a>
+                  </h3>
+
+                  <address class="card-location">Kuala Lumpur, Malaysia</address>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-banner">
+                  <a href="https://kuala-lumpur-tower.malaysia-tickets.com/?msclkid=cb8eaadb492615a452a0ce0eb5cdbe3c&utm_source=bing&utm_medium=cpc&utm_campaign=Kuala%20Lumpur%20-%20KL%20Tower%20-%20English%20-%20Rest%20of%20World%20-%20Search%20-%20All%20-%20All%20-%20cid2054&utm_term=kl%20tower%20tickets&utm_content=Tickets%20-%20Broad%20-%20English%20-%20All">
+                    <img src="{% static 'images/popular-3.jpg' %}" width="740" height="518" loading="lazy"
+                      alt="Kuala Lumpur, Malaysia" class="img-cover">
+                  </a>
+
+                  <span class="card-badge">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="P12D">12 Days</time>
+                  </span>
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-wrapper">
+                    <div class="card-price">From $50.00</div>
+
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+
+                      <data value="2">(2)</data>
+                    </div>
+                  </div>
+
+                  <h3 class="card-title">
+                    <a href="https://kuala-lumpur-tower.malaysia-tickets.com/?msclkid=cb8eaadb492615a452a0ce0eb5cdbe3c&utm_source=bing&utm_medium=cpc&utm_campaign=Kuala%20Lumpur%20-%20KL%20Tower%20-%20English%20-%20Rest%20of%20World%20-%20Search%20-%20All%20-%20All%20-%20cid2054&utm_term=kl%20tower%20tickets&utm_content=Tickets%20-%20Broad%20-%20English%20-%20All">A good traveler has no fixed plans and is not intent on arriving.</a>
+                  </h3>
+
+                  <address class="card-location">Kuala Lumpur, Malaysia</address>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about">
+        <div class="container">
+
+          <div class="about-content">
+
+            <p class="section-subtitle">About Us</p>
+
+            <h2 class="h2 section-title">Explore all tour of the world with us.</h2>
+
+            <p class="about-text">
+              Travel Hub 🌍 Explore the world by walking, driving, flying, and viewing live footage of different locations around the world.<br> 
+              Begin! Live Cam 📸 View LIVE Footage from different cities around the world.<br>
+              Enjoy! Begin! Flying Tour ️ Enjoy the view from above for over 80+ country.
+            </p>
+
+            <ul class="about-list">
+
+              <li class="about-item">
+
+                <div class="about-item-icon">
+                  <ion-icon name="compass"></ion-icon>
+                </div>
+
+                <div class="about-item-content">
+                  <h3 class="h3 about-item-title">Tour guide</h3>
+
+                  <p class="about-item-text">
+                    Book your activities without the stress. We offer free and easy 24 hour cancellation. Find and pick from our wide selection of top-rated tours and activities for your trip.
+                  </p>
+                </div>
+
+              </li>
+
+              <li class="about-item">
+
+                <div class="about-item-icon">
+                  <ion-icon name="briefcase"></ion-icon>
+                </div>
+
+                <div class="about-item-content">
+                  <h3 class="h3 about-item-title">Friendly price</h3>
+
+                  <p class="about-item-text">
+                    India Tour Packages: Receive up to 40% off when you book your India holiday package with Tour My India. Call +9112547893 for the latest holiday deals.
+                  </p>
+                </div>
+
+              </li>
+
+              <li class="about-item">
+
+                <div class="about-item-icon">
+                  <ion-icon name="umbrella"></ion-icon>
+                </div>
+
+                <div class="about-item-content">
+                  <h3 class="h3 about-item-title">Reliable tour</h3>
+
+                  <p class="about-item-text">
+                    Reliable Tour & Travel is renowned for its well managed tourism services. We believe to provide the deluxe tour in the travel industry in terms of tour scheduling, tour charges.
+                  </p>
+                </div>
+
+              </li>
+
+            </ul>
+
+            <a href="https://www.booking.com/index.html?aid=393655&label=msn-BoiTTyJ8nYHfaxc2iDfqiQ-80195664894256:tikwd-17155438431:loc-90:neo:mtp:lp149973:dec:qstour%20booking%20world&utm_campaign=English%20EN%20ROW-CAUS&utm_medium=cpc&utm_source=bing&utm_term=BoiTTyJ8nYHfaxc2iDfqiQ&msclkid=81c190038058107516f9f4d580af4af9" class="btn btn-primary">Booking Now</a>
+
+          </div>
+
+          <figure class="about-banner">
+            <img src="{% static 'images/404.jpg' %}" width="756" height="842" loading="lazy" alt="" class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="section blog">
+        <div class="container">
+
+          <p class="section-subtitle">From The Blog Post</p>
+
+          <h2 class="h2 section-title">Latest News & Articles</h2>
+
+          <ul class="blog-list">
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+
+                  <a href="https://www.thestar.com.my/">
+                    <img src="{% static 'images/popular-1.jpg' %}" width="740" height="518" loading="lazy"
+                      alt="A good traveler has no fixed plans and is not intent on arriving." class="img-cover">
+                  </a>
+
+                  <span class="card-badge">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="12-04">04 Dec</time>
+                  </span>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-wrapper">
+
+                    <div class="author-wrapper">
+                      <figure class="author-avatar">
+                        <img src="{% static 'images/author-avatar.jpg' %}" width="30" height="30" alt="Jony bristow">
+                      </figure>
+
+                      <div>
+                        <a href="#" class="author-name">Amit Mishra</a>
+
+                        <p class="author-title">Admin</p>
+                      </div>
+                    </div>
+
+                    <time class="publish-time" datetime="10:30">10:30 AM</time>
+
+                  </div>
+
+                  <h3 class="card-title">
+                    <a href="#">
+                      A good traveler has no fixed plans and is not intent on arriving.
+                    </a>
+                  </h3>
+
+                  <a href="#" class="btn-link">
+                    <span>Read More</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+
+                  <a href="https://www.thestar.com.my/">
+                    <img src="{% static 'images/blog-2.jpg' %}" width="740" height="518" loading="lazy"
+                      alt="A good traveler has no fixed plans and is not intent on arriving." class="img-cover">
+                  </a>
+
+                  <span class="card-badge">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="12-04">04 Dec</time>
+                  </span>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-wrapper">
+
+                    <div class="author-wrapper">
+                      <figure class="author-avatar">
+                        <img src="{% static 'images/author-avatar.jpg' %}" width="30" height="30" alt="Jony bristow">
+                      </figure>
+
+                      <div>
+                        <a href="#" class="author-name">Amit Mishra</a>
+
+                        <p class="author-title">Admin</p>
+                      </div>
+                    </div>
+
+                    <time class="publish-time" datetime="10:30">10:30 AM</time>
+
+                  </div>
+
+                  <h3 class="card-title">
+                    <a href="#">
+                      A good traveler has no fixed plans and is not intent on arriving.
+                    </a>
+                  </h3>
+
+                  <a href="#" class="btn-link">
+                    <span>Read More</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+
+                  <a href="https://www.thestar.com.my/">
+                    <img src="{% static 'images/blog-3.jpg' %}" width="740" height="518" loading="lazy"
+                      alt="A good traveler has no fixed plans and is not intent on arriving." class="img-cover">
+                  </a>
+
+                  <span class="card-badge">
+                    <ion-icon name="time-outline"></ion-icon>
+
+                    <time datetime="12-04">04 Dec</time>
+                  </span>
+
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-wrapper">
+
+                    <div class="author-wrapper">
+                      <figure class="author-avatar">
+                        <img src="{% static 'images/author-avatar.jpg' %}" width="30" height="30" alt="Jony bristow">
+                      </figure>
+
+                      <div>
+                        <a href="#" class="author-name">Amit Mishra</a>
+
+                        <p class="author-title">Admin</p>
+                      </div>
+                    </div>
+
+                    <time class="publish-time" datetime="10:30">10:30 AM</time>
+
+                  </div>
+
+                  <h3 class="card-title">
+                    <a href="#">
+                      A good traveler has no fixed plans and is not intent on arriving.
+                    </a>
+                  </h3>
+
+                  <a href="#" class="btn-link">
+                    <span>Read More</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+    </article>
+  {% comment %} {% endblock main %} {% endcomment %}
+  </main>
+  
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer" style="background-image: url('{% static 'images/footer-bg.png' %}')">
+    <div class="container">
+
+      <div class="footer-top">
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Top destination</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Indonesia, Jakarta</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Maldives, Malé</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Australia, Canberra</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Thailand, Bangkok</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Morocco, Rabat</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Categories</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Travel</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Lifestyle</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Fashion</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Education</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Food & Drink</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Quick links</p>
+          </li>
+
+          <li>
+            <a href="{% url 'about' %}" class="footer-link">About us</a>
+          </li>
+
+          <li>
+            <a href="{% url 'contact' %}" class="footer-link">Contact</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Tours</a>
+          </li>
+
+          <li>
+            <a href="https://www.booking.com/index.html?aid=393655&label=msn-BoiTTyJ8nYHfaxc2iDfqiQ-80195664894256:tikwd-17155438431:loc-90:neo:mtp:lp149973:dec:qstour%20booking%20world&utm_campaign=English%20EN%20ROW-CAUS&utm_medium=cpc&utm_source=bing&utm_term=BoiTTyJ8nYHfaxc2iDfqiQ&msclkid=81c190038058107516f9f4d580af4af9" class="footer-link">Booking</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Terms & Conditions</a>
+          </li>
+
+        </ul>
+
+        <div class="footer-list">
+
+          <p class="footer-list-title">Get a newsletter</p>
+
+          <p class="newsletter-text">
+            For the latest deals and tips, travel no further than your inbox
+          </p>
+
+          <form action="" class="newsletter-form">
+            <input type="email" name="email" required placeholder="Email address" class="newsletter-input">
+
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <a href="#" class="logo">Tourist</a>
+
+        <p class="copyright">
+          &copy; 2023<a href="#" class="copyright-link">Amit Mishra</a>. All Rights Reserved
+        </p>
+
+        <ul class="social-list">
+
+          <li>
+            <a href="https://www.facebook.com/" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://twitter.com/?lang=en-in" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://in.linkedin.com" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.google.co.in/" class="social-link">
+              <ion-icon name="logo-google"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top" data-go-top aria-label="Go To Top">
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src={% static 'js/script.js' %}></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
